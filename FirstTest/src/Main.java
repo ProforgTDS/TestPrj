@@ -2,38 +2,45 @@
  * Created by Dima on 04.10.2016.
  */
 
-class Box {
-    int wigth;
-    int higth;
+class Stack {
+    int stch[] = new int[10];
+    int tos;
 
-    Box(int w,int h){
-        this.wigth = w;
-        this.higth = h;
-    }
-    double Volume () {
-//        System.out.print("size of box =");
-//        System.out.println(wigth*higth);
-        return wigth*higth;
+    Stack(){
+        tos=-1;
     }
 
+    void push (int item) {
+        if (tos==9)
+            System.out.println("Стек заполнен");
+        else
+            stch[++tos]=item;
+    }
+
+    int pop() {
+        if (tos<0) {
+            System.out.println("Стек пуст");
+            return 0;
+        }
+        else
+            return stch[tos--];
+    }
 }
 
 
 public class Main {
 
     public static void main(String[] args) {
+        Stack mystack1 = new Stack();
+        Stack mystack2 = new Stack();
+        for (int i=0;i<10;i++) mystack1.push(i);
+        for (int i=10;i<20;i++) mystack2.push(i);
 
-        Box mybox = new Box(10,15);
-        Box mybox2 = new Box(12,10);
-//        mybox.higth = 10;
-//        mybox.wigth = 15;
-//        mybox2.higth = 12;
-//        mybox2.wigth = 10;
-        System.out.println("Hello World!");
-//        System.out.print("size of box = " + mybox2.higth * mybox2.wigth);
-        System.out.print("size of box = " + mybox.Volume() + " and " + mybox2.Volume());
-//        mybox.Volume();
-//        mybox2.Volume();
+        System.out.println("Содержимое стека 1:");
+        for (int i=0;i<10;i++) System.out.print (mystack1.pop() + " ");
+        System.out.println();
+        System.out.println("Содержимое стека 2:");
+        for (int i=10;i<20;i++) System.out.print (mystack2.pop() + " ");
     }
 
 }
