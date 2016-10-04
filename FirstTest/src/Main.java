@@ -6,9 +6,10 @@ class Box {
     int wigth;
     int higth;
 
-    void Volume () {
-        System.out.print("size of box =");
-        System.out.println(wigth*higth);
+    double Volume () {
+//        System.out.print("size of box =");
+//        System.out.println(wigth*higth);
+        return wigth*higth;
     }
 
 }
@@ -26,8 +27,9 @@ public class Main {
         mybox2.wigth = 10;
         System.out.println("Hello World!");
 //        System.out.print("size of box = " + mybox2.higth * mybox2.wigth);
-        mybox.Volume();
-        mybox2.Volume();
+        System.out.print("size of box = " + mybox.Volume() + " and " + mybox2.Volume());
+//        mybox.Volume();
+//        mybox2.Volume();
     }
 
 }
