@@ -13,7 +13,7 @@ class Box {
         depth = ob.depth;
     }
 
-    Box (double w, double h,double d) {
+    Box (double w, double h, double d) {
         wigth = w;
         higth = h;
         depth = d;
@@ -29,29 +29,44 @@ class Box {
         wigth = higth = depth = len;
     }
     double Volume () {
-//        System.out.print("size of box =");
-//        System.out.println(wigth*higth);
         return wigth*higth*depth;
     }
-
 }
 
+class BoxWeight extends Box {
+    double weight;
 
+    BoxWeight (double w,double h, double d, double m) {
+        wigth = w;
+        higth = h;
+        depth = d;
+        weight = m;
+    }
+}
+
+class ColorBox extends Box {
+    int color;
+
+    ColorBox (double w,double h, double d, int c) {
+        wigth = w;
+        higth = h;
+        depth = d;
+        color = c;
+    }
+}
 public class Main {
 
     public static void main(String[] args) {
+        BoxWeight myboxweight = new BoxWeight(3,5,7,8.37);
+        Box myplainbox new Box();
+        double vol;
 
-        Box mybox = new Box(10,15);
-        Box mybox2 = new Box(12,10);
-//        mybox.higth = 10;
-//        mybox.wigth = 15;
-//        mybox2.higth = 12;
-//        mybox2.wigth = 10;
-        System.out.println("Hello World!");
-//        System.out.print("size of box = " + mybox2.higth * mybox2.wigth);
-        System.out.print("size of box = " + mybox.Volume() + " and " + mybox2.Volume());
-//        mybox.Volume();
-//        mybox2.Volume();
+        vol = myboxweight.Volume();
+        System.out.println("Объем myboxweight = "+vol);
+        System.out.println("Вес myboxweight = "+myboxweight.weight);
+        myplainbox = myboxweight;
+        vol = myplainbox.Volume();
+        System.out.println("Объем myplainbox = "+vol);
     }
 
 }
