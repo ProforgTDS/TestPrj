@@ -1,31 +1,30 @@
 /**
  * Created by Dima on 04.10.2016.
  */
-
-class Test {
-    int a,b;
-
-    Test (int i, int j) {
-        a=i;
-        b=j;
+//Вычисляем факториал рекурсивным методом
+class Faktorial {
+    int step;
+    Faktorial(){
+        step = 0;
     }
 
-    boolean equals(Test o){
-        if (o.a==a && o.b==b) return true;
-        else return false;
+    int fakt(int i) {
+        int result;
+        ++step;
+        System.out.println("Текущий шаг: "+step);
+        if (i==1) return 1;
+        result = fakt(i-1)*i;
+        return result;
     }
+
 }
 
 
 public class Main {
 
     public static void main(String[] args) {
-        Test ob1 = new Test(100,22);
-        Test ob2 = new Test(100,22);
-        Test ob3 = new Test(-1,-1);
-
-        System.out.println("ob1==ob2: "+ob1.equals(ob2));
-        System.out.println("ob1==ob3: "+ob1.equals(ob3));
+        Faktorial ob1 = new Faktorial();
+        System.out.println("Факториал числа 10 равен"+ob1.fakt(10));
     }
 
 }
