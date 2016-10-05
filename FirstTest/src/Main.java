@@ -3,17 +3,35 @@
  */
 
 class Box {
-    int wigth;
-    int higth;
+    double wigth;
+    double higth;
+    double depth;
 
-    Box(int w,int h){
-        this.wigth = w;
-        this.higth = h;
+    Box(Box ob){
+        wigth = ob.wigth;
+        higth = ob.higth;
+        depth = ob.depth;
+    }
+
+    Box (double w, double h,double d) {
+        wigth = w;
+        higth = h;
+        depth = d;
+    }
+
+    Box(){
+        wigth = -1;
+        higth = -1;
+        depth = -1;
+    }
+
+    Box(double len){
+        wigth = higth = depth = len;
     }
     double Volume () {
 //        System.out.print("size of box =");
 //        System.out.println(wigth*higth);
-        return wigth*higth;
+        return wigth*higth*depth;
     }
 
 }
