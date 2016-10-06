@@ -94,13 +94,13 @@ class ColorBox extends Box {
 public class Main {
 
     public static void main(String[] args) {
-        BoxWeight myboxweight = new BoxWeight(3,5,7,8.37);
+        Sipment mySipment1 = new Sipment(10,20,15,10,3.41);
+        Sipment mySipment2 = new Sipment(2,3,4,0.76,1.28);
         double vol;
 
         vol = myboxweight.Volume();
         System.out.println("Объем myboxweight = "+vol);
         System.out.println("Вес myboxweight = "+myboxweight.weight);
-        myplainbox = myboxweight;
         vol = myplainbox.Volume();
         System.out.println("Объем myplainbox = "+vol);
     }
