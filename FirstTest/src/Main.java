@@ -98,11 +98,14 @@ public class Main {
         Sipment mySipment2 = new Sipment(2,3,4,0.76,1.28);
         double vol;
 
-        vol = myboxweight.Volume();
-        System.out.println("Объем myboxweight = "+vol);
-        System.out.println("Вес myboxweight = "+myboxweight.weight);
-        vol = myplainbox.Volume();
-        System.out.println("Объем myplainbox = "+vol);
+        vol = mySipment1.Volume();
+        System.out.println("Объем mySipment1 = " + vol);
+        System.out.println("Вес mySipment1 = " + mySipment1.weight);
+        System.out.println("Стоимость доставки: $" + mySipment1.cost);
+        System.out.println();
+        vol = mySipment2.Volume();
+        System.out.println("Объем mySipment2 = " + vol);
+        System.out.println("Вес mySipment2 = " + mySipment1.weight);
+        System.out.println("Стоимость доставки: $" + mySipment1.cost);
     }
-
 }
