@@ -3,9 +3,9 @@
  */
 
 class Box {
-    double wigth;
-    double higth;
-    double depth;
+    private double wigth;
+    private double higth;
+    private double depth;
 
     Box(Box ob){
         wigth = ob.wigth;
@@ -28,6 +28,7 @@ class Box {
     Box(double len){
         wigth = higth = depth = len;
     }
+
     double Volume () {
         return wigth*higth*depth;
     }
@@ -36,10 +37,23 @@ class Box {
 class BoxWeight extends Box {
     double weight;
 
-    BoxWeight (double w,double h, double d, double m) {
-        wigth = w;
-        higth = h;
-        depth = d;
+    BoxWeight(BoxWeight ob){
+        super(ob);
+        weight = ob.weight;
+    }
+
+    BoxWeight (double w, double h, double d, double m) {
+        super(w,h,d);
+        weight = m;
+    }
+
+    BoxWeight(){
+        super();
+        weight = -1;
+    }
+
+    BoxWeight(double len, double m){
+        super(len);
         weight = m;
     }
 }
@@ -54,11 +68,11 @@ class ColorBox extends Box {
         color = c;
     }
 }
+
 public class Main {
 
     public static void main(String[] args) {
         BoxWeight myboxweight = new BoxWeight(3,5,7,8.37);
-        Box myplainbox new Box();
         double vol;
 
         vol = myboxweight.Volume();
