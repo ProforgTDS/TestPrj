@@ -58,13 +58,35 @@ class BoxWeight extends Box {
     }
 }
 
+class Sipment extends BoxWeight {
+    double cost;
+
+    Sipment(Sipment ob){
+        super(ob);
+        cost = ob.cost;
+    }
+
+    Sipment (double w, double h, double d, double m, double c) {
+        super(w,h,d,m);
+        cost = c;
+    }
+
+    Sipment(){
+        super();
+        cost = -1;
+    }
+
+    Sipment(double len, double m, double c){
+        super(len, m);
+        cost = c;
+    }
+}
+
 class ColorBox extends Box {
     int color;
 
     ColorBox (double w,double h, double d, int c) {
-        wigth = w;
-        higth = h;
-        depth = d;
+        super(w,h,d);
         color = c;
     }
 }
