@@ -105,7 +105,7 @@ public class Main {
         System.out.println();
         vol = mySipment2.Volume();
         System.out.println("Объем mySipment2 = " + vol);
-        System.out.println("Вес mySipment2 = " + mySipment1.weight);
-        System.out.println("Стоимость доставки: $" + mySipment1.cost);
+        System.out.println("Вес mySipment2 = " + mySipment2.weight);
+        System.out.println("Стоимость доставки: $" + mySipment2.cost);
     }
 }
